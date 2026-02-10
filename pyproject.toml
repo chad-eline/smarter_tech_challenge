@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=65.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "smarter_tech"
+version = "0.1.0"
+description = "Smarter Technologies Inc. interview coding challenge"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+    {name = "Chad Eline", email = "charleseline@gmail.com"}
+]
+
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=9.0.2", "pytest-cov>=4.0.0"]
+
+[tool.setuptools]
+py-modules = ["sort", "main"]
+
+[tool.pytest.ini_options]
+addopts = "-vv"
+pythonpath = ["."]
+minversion = "6.0"
