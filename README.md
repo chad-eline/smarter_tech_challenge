@@ -1,9 +1,5 @@
 # Smarter Technologies
 
-## Overview
-
-This is my submission for the Smarter Technologies 'Core Engineering Technical Screen'. Listed below are instructions for:
-
 - [Smarter Technologies](#smarter-technologies)
   - [Overview](#overview)
   - [Project Setup](#project-setup)
@@ -16,10 +12,16 @@ This is my submission for the Smarter Technologies 'Core Engineering Technical S
     - [Implementation](#implementation)
     - [Submission Guidance](#submission-guidance)
 
+## Overview
+
+This is my submission for the Smarter Technologies 'Core Engineering Technical Screen'. You can use the table of 
+contents above to setup the project, run it, and execute the test cases. Finally there is a section documenting
+my approach to this problem.
+
 ## Project Setup
 
-Requires Python 3.11+ and [uv](https://docs.astral.sh/uv/) package manager. Optionally you can install 
-make file if you want to use the simpilier make commands with.
+Requires Python 3.11+ and [uv](https://docs.astral.sh/uv/) package manager. Optionally, you can install 
+`make` to use the simplified commands.
 
 ```bash
 sudo apt-get install make
