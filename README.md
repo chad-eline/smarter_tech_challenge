@@ -4,15 +4,28 @@
 
 This is my submission for the Smarter Technologies 'Core Engineering Technical Screen'. Listed below are instructions for:
 
-- Project Setup
-- Running the Project
-- Running a suite of tests on the project
-- My Approach
-- The original instructions of the Technical Screen
+- [Smarter Technologies](#smarter-technologies)
+  - [Overview](#overview)
+  - [Project Setup](#project-setup)
+  - [Running the Project](#running-the-project)
+  - [Running Tests](#running-tests)
+  - [Approach](#approach)
+  - [Core Engineering Technical Screen](#core-engineering-technical-screen)
+    - [Objective](#objective)
+    - [Rules](#rules)
+    - [Implementation](#implementation)
+    - [Submission Guidance](#submission-guidance)
 
 ## Project Setup
 
-Requires Python 3.11+ and [uv](https://docs.astral.sh/uv/) package manager.
+Requires Python 3.11+ and [uv](https://docs.astral.sh/uv/) package manager. Optionally you can install 
+make file if you want to use the simpilier make commands with.
+
+```bash
+sudo apt-get install make
+```
+
+You can install uv and create the venv with the following.
 
 ```bash
 # Install uv (if not already installed)
@@ -28,19 +41,34 @@ uv sync --all-extras
 
 ## Running the Project
 
+If you have make installed you can simply run:
+
 ```bash
 make run
 ```
 
-Or directly:
+Or you can directly execute the project with:
 
 ```bash
 uv run python main.py
 ```
 
-The CLI will prompt for package dimensions (width, height, length in cm) and mass (in kg), then output the classification.
+The CLI will prompt for package dimensions (width, height, length in cm) and mass (in kg), then output the classification. For example:
+
+![CLI output example](assets/cli_output.png)
 
 ## Running Tests
+
+This project also includes a test suite, [using PyTest](https://docs.pytest.org/en/stable/index.html), of 34 tests covering:
+
+- Classification logic (REJECTED, SPECIAL, STANDARD)
+- Boundary conditions and edge cases
+- Float input handling
+- Input validation (positive values required)
+
+Having good test cases is paramount to building great products, so I included them here.
+
+Tests can be run as follows if you have `make` installed.
 
 ```bash
 # Run all tests
@@ -50,12 +78,17 @@ make test
 make test-coverage
 ```
 
-The test suite includes 34 tests covering:
+If not you can run them manually as follows.
 
-- Classification logic (REJECTED, SPECIAL, STANDARD)
-- Boundary conditions and edge cases
-- Float input handling
-- Input validation (positive values required)
+```bash
+# Run all tests
+uv run pytest .
+
+# Run tests with coverage report
+uv run pytest --cov=sort --cov-report=term-missing --cov-report=html
+```
+
+![Test output example](assets/tests.png)
 
 ## Approach
 
@@ -108,10 +141,10 @@ Implement the function **`sort(width, height, length, mass)`** (units are centim
 1. **Time Management**: Allocate no more than 30 minutes to complete this challenge.
 2. **Programming Language**: You may use any programming language you're comfortable with. This is an opportunity to showcase your skills in a language you are proficient in.
 3. **Submission Format**:
-    - **Option 1**: Submit a public GitHub repository with clear README instructions.
-    - **Option 2 (Preferred)**: Host your solution on an online IDE like [Repl.it](http://repl.it/) or CodePen for immediate code review. Ensure the link is accessible for direct execution.
+   - **Option 1**: Submit a public GitHub repository with clear README instructions.
+   - **Option 2 (Preferred)**: Host your solution on an online IDE like [Repl.it](http://repl.it/) or CodePen for immediate code review. Ensure the link is accessible for direct execution.
 4. **Evaluation Criteria**: Submissions will be assessed on:
-    - Correct sorting logic.
-    - Code quality.
-    - Handling edge cases and inputs.
-    - Test coverage.
+   - Correct sorting logic.
+   - Code quality.
+   - Handling edge cases and inputs.
+   - Test coverage.
